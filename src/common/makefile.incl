@@ -1,0 +1,14 @@
+GXX=g++
+	# `if test "\`uname\`" = "Linux"; then echo "g++";fi`
+
+
+OBJS=$(SRC_C:.C=.o)
+
+common: $(OBJS)
+	@echo "-------begin to compile--------"
+	@$(GXX) -o $(OBJS) -I. -I../freesoft/lua
+
+
+clean:
+	rm -f *.o
+	@echo "all *.o had be removed"
